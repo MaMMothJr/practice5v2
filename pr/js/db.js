@@ -12,13 +12,13 @@ export default class DB {
   updateStudent(id, data) {
     return fetch(`${this.apiUrl}/api/v1/students/${id}.json`, {
       method: 'PUT',
-      body: JSON.stringfy(data)
+      body: JSON.stringify(data)
     }).then(_ =>_.json());
   }
   creatStudent(data) {
     return fetch(`${this.apiUrl}/api/v1/students.json`, {
       method: 'POST',
-      body: JSON.stringfy(data)
+      body: JSON.stringify(data)
     }).then(_ =>_.json());
   }
   deleteStudent(id) {
