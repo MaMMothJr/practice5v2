@@ -18,7 +18,7 @@
 // console.log('instance', instance);
 
 import DB from './db.js';
-import {studentListElement} from './variables.js';
+import {studentListElement, updateStudentFormElement} from './variables.js';
 import {appendStudent} from './tools.js';
 
 
@@ -30,4 +30,38 @@ database.getStudent().then(result => {
   studentList = Object.values(result);
 
   studentList.forEach(student => appendStudent(student, studentListElement));
+});
+
+studentListElement.addEventListener('click', event => {
+  let target = event.target;
+  if (!target.hasAttribute('data-id')) return;
+
+  event.preventDefault();
+  console.log(target);
+
+  let studentId = target.getAttribute('data-id');
+  console.log(studentId);
+
+  database.getStudentById(studentId).then(response => {
+    console.log('response', response);
+
+    for (let key in response) {
+      if (updateStudentFormElement.elements[key]) {
+
+      updateStudentFormElement.elements[key].value = response[key];
+    }
+  }
+});
+});
+
+updateStudentFormElement.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let data = {};
+
+  for (let key in this.elements) {
+    if (!this.elements[key].hasAttribute || !this.elements[key].hasAttribute('name')) continue;
+
+    data[this.elemnets[key].getAttribute('name')] = this.elements[key].value;
+  }
 });
