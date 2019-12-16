@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/master.css">
+    </style>
+    <title>Restful API</title>
+  </head>
+  <body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-info">
+        <div class="panel-heading"> Student list</div>
+        <div class="panel-body">
+        </div>
+        <div class="list-group" id= "students-list">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-warning">
+        <div class="panel-heading"> Student Info</div>
+        <div class="panel-body">
+          <form id="update-student-form">
+            <div class="form-group">
+              <input type="text" name="firstname" value="firstname" placeholder="Firstname" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="lastname" value="lastname" placeholder="Lastname" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" value="email" placeholder="E-mail" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="git" value="git" placeholder="GIT" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="group_id"  placeholder="Group_id" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+              <textarea name="info"  placeholder="Info" class="form-control"></textarea>
+            </div>
+            <button type="button" class= "btn btn-warning">Update</button>
+            <button type="button" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="panel panel-success">
+        <div class="panel-heading"> Creat Student</div>
+        <div class="panel-body">
+          <form class="" action="index.html" method="post">
+            <div class="form-group">
+              <input type="text" name="firstname" value="firstname" placeholder="Firstname" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="lastname" value="lastname" placeholder="Lastname" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" value="email" placeholder="E-mail" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="git" value="git" placeholder="GIT" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="text" name="group_id"  placeholder="Group_id" class="form-control" readonly>
+            </div>
+            <div class="form-group">
+              <textarea name="info"  placeholder="Info" class="form-control"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <script type="module" src="./js/index.js">
+    </script>
+  </body>
+</html>
